@@ -1,0 +1,32 @@
+{
+    "vehicleData":[
+        {
+            "type": "Car" ,
+            "make": "Ford",
+            "model": "Focus",
+            "retailprice": "$16,500",
+            "id": 1
+        },
+         {
+            "type": "Car" ,
+            "make": "Ford",
+            "model": "Fusion",
+            "retailprice": "$22,000",
+            "id": 1
+        },
+         {
+            "type": "Truck" ,
+            "make": "Ford",
+            "model": "F-150",
+            "retailprice": "$24,500",
+            "id": 1
+        },
+         {
+            "type": "Car" ,
+            "make": "Lincoln",
+            "model": "MKZ",
+            "retailprice": "$34,500",
+            "id": 1
+        }
+    ]
+}
