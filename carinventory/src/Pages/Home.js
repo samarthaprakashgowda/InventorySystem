@@ -4,8 +4,6 @@ import { Box } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import Image from '../images/darkSplash.jpg'; 
 import Paper from '@material-ui/core/Paper';
-import { FiChevronsDown } from "react-icons/fi";
-import { IconContext } from 'react-icons';
 import { Link } from 'react-router-dom';
 
 
@@ -59,12 +57,12 @@ const Home = () => {
                     
                         <Button size = "large" variant = "contained" color = "primary" 
                             style = {styles.button}>
-                                <Link to= '/Inventory' style={styles.link}>View Inventory
+                                <Link to= '/inventory' style={styles.link}>View Inventory
                                 </Link>
                         </Button>
                         <Button size = "large" variant = "contained" color = "primary"
                             style = {styles.button}>
-                            <Link to= '/Addcar' style={styles.link}>Login to Add Cars
+                            <Link to= '/login' style={styles.link}>Login to Add Cars
                             </Link>
                         </Button>
                 </ButtonGroup>

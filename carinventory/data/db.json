@@ -1,32 +1,84 @@
 {
-    "vehicleData":[
-        {
-            "type": "Car" ,
-            "make": "Ford",
-            "model": "Focus",
-            "retailprice": "$16,500",
-            "id": 1
-        },
-         {
-            "type": "Car" ,
-            "make": "Ford",
-            "model": "Fusion",
-            "retailprice": "$22,000",
-            "id": 1
-        },
-         {
-            "type": "Truck" ,
-            "make": "Ford",
-            "model": "F-150",
-            "retailprice": "$24,500",
-            "id": 1
-        },
-         {
-            "type": "Car" ,
-            "make": "Lincoln",
-            "model": "MKZ",
-            "retailprice": "$34,500",
-            "id": 1
-        }
-    ]
+  "vehicleData": [
+    {
+      "type": "Car",
+      "make": "Ford",
+      "model": "Focus",
+      "retailprice": "$16,500",
+      "year": 2018,
+      "features": "2Door",
+      "qty": 4,
+      "id": 1
+    },
+    {
+      "type": "Car",
+      "make": "Ford",
+      "model": "Fusion",
+      "retailprice": "$22,000",
+      "year": 2018,
+      "features": "2Door",
+      "qty": 4,
+      "id": 2
+    },
+    {
+      "type": "Truck",
+      "make": "Ford",
+      "model": "F-150",
+      "retailprice": "$24,500",
+      "year": 2018,
+      "features": "2Door",
+      "qty": 4,
+      "id": 3
+    },
+    {
+      "type": "Car",
+      "make": "Ford",
+      "model": "Fusion",
+      "retailprice": "234",
+      "year": 2021,
+      "features": "2Door",
+      "qty": "213",
+      "id": 5
+    },
+    {
+      "type": "Car",
+      "make": "Audi",
+      "model": "A6",
+      "retailprice": "11234",
+      "year": 2021,
+      "features": "4Door",
+      "qty": "21",
+      "id": 6
+    },
+    {
+      "type": "Truck",
+      "make": "BMW",
+      "model": "M6",
+      "retailprice": "11234",
+      "year": 2021,
+      "features": "4Door",
+      "qty": "21",
+      "id": 7
+    },
+    {
+      "type": "Car",
+      "make": "Ford",
+      "model": "Austang",
+      "retailprice": "11234",
+      "year": 2021,
+      "features": "4Door",
+      "qty": "21",
+      "id": 8
+    },
+    {
+      "type": "Car",
+      "make": "BMW",
+      "model": "Ang",
+      "retailprice": "11234",
+      "year": 2021,
+      "features": "4Door",
+      "qty": "21",
+      "id": 9
+    }
+  ]
 }

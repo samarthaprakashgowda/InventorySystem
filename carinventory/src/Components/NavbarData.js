@@ -5,19 +5,19 @@ import * as AiIcons from 'react-icons/ai';
 export const NavbarData = [
     {
         title: 'Home',
-        path: '/Home',
+        path: '/home',
         icons: <AiIcons.AiFillCar/>,
         cName: 'nav-text'
     },
     {
-        title: 'Add Car',
-        path: '/Addcar',
+        title: 'Login',
+        path: '/login',
         icons: <AiIcons.AiFillAlipaySquare/>,
         cName: 'nav-text'
     },
     {
         title: 'Inventory',
-        path: '/Inventory',
+        path: '/inventory',
         icons: <AiIcons.AiFillAlipaySquare/>,
         cName: 'nav-text'
     }
