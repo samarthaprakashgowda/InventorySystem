@@ -1,3 +1,15 @@
+TO RUN THE APPLICATION
+
+1. npm install to install npm modules and dependencies
+2. npm start to start the application
+3. on another terminal run json-server --watch data/db.json --port 8000
+
+STILL TO DO
+Added session storage but still need to protect routes based on the token
+
+CODE Defect
+On Login and On Add Car page clicking once doesn't take the value!
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
