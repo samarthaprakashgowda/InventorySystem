@@ -1,6 +1,7 @@
 import {CssBaseline, Typography, Container, Grid, Card, CardMedia, CardContent, CardActions, Button} from '@material-ui/core';
 import {DeleteRounded} from '@material-ui/icons';
 import {useHistory} from 'react-router-dom';
+import NumberFormat from 'react-number-format';
 
 const styles = {
     cardGrid:{
@@ -70,7 +71,7 @@ const FilteredData = ({data}) => {
                                 <CardMedia  style={styles.cardMedia} image = {`https://source.unsplash.com/collection/${collectionID}`} title="image title"/>
                                 <CardContent style={styles.cardContent}>
                                     <Typography variant="h5" gutterBottom>{car.make} {car.model}</Typography>
-                                    <Typography variant = "h6" align="right"> {car.retailprice}</Typography>
+                                    <Typography variant = "h6" align="right"><NumberFormat value = {car.retailprice} displayType={'text'} thousandSeparator={true}prefix={'$'}/></Typography>
                                     <Typography variant = "subtitle1"> Features</Typography>
                                 </CardContent>
                                 <CardActions>

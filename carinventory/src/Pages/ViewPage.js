@@ -1,5 +1,7 @@
 import {Box, CssBaseline, Typography, Grid, Card, CardMedia, CardContent} from '@material-ui/core';
 import {useState, useEffect} from 'react';
+import NumberFormat from 'react-number-format';
+
 const styles = {
       cardGrid:{
         //padding: '20px 0',
@@ -49,7 +51,7 @@ const ViewPage = (id) => {
                                         <CardMedia  style={styles.cardMedia} image = {`https://source.unsplash.com/collection/${collectionID}`} title="image title"/>
                                         <CardContent >
                                             <Typography variant="h5">{car.make} {car.model}</Typography>
-                                            <Typography variant = "h6" align="right"> {car.retailprice}</Typography>
+                                            <Typography variant = "h6" align="right"><NumberFormat value = {car.retailprice} displayType={'text'} thousandSeparator={true}prefix={'$'}/></Typography>
                                             <Typography variant = "subtitle1"> Features</Typography>
                                             <Typography variant = "subtitle2"> {car.features}</Typography>
                                             <Typography variant = "subtitle2">Year: {car.year}</Typography>
