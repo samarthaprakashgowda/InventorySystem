@@ -23,7 +23,7 @@ const Logout = () => {
     const signOut = () => {
         sessionStorage.removeItem("token");
         setDisable(-1)
-        history.push('/home');
+        history.push('/');
     };
     
     //console.log(disable);

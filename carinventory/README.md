@@ -6,6 +6,7 @@ TO RUN THE APPLICATION
 
 STILL TO DO
 Added session storage but still need to protect routes based on the token
+Same with Signout and Delete which only needs to be enabled with token
 
 CODE Defect
 On Login and On Add Car page clicking once doesn't take the value!

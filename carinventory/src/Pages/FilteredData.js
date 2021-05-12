@@ -36,7 +36,7 @@ const FilteredData = ({data}) => {
                 'Content-Type': 'application/json'
             },
         })
-        .then(()=>{history.push('/home')})
+        .then(()=>{history.push('/')})
     }
     const handleView = (id)=>{
          history.push({
