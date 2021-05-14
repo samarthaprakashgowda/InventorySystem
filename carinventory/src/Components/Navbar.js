@@ -9,28 +9,17 @@ function Navbar() {
     <>
       <IconContext.Provider value={{ color: '#fff' }}>
         <div className='navbar'>
-          {/* <Link to='#' className='menu-bars'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </Link> */}
-        <nav className="navbar">
-          {/* <ul className='nav-menu-items' onClick={showSidebar}>
-            <li className='navbar-toggle'> */}
-              {/* <Link to='#' className='menu-bars'>
-                <AiIcons.AiOutlineClose />
-              </Link> */}
-            {/* </li> */}
+          <nav className="navbar">
             {NavbarData.map((item, index) => {
               return (
                 <li key={index} className={item.cName}>
                   <Link to={item.path}>
-                    {item.icon}
                     <span>{item.title}</span>
                   </Link>
                 </li>
               );
             })}
-          {/* </ul> */}
-        </nav>
+          </nav>
         </div>
       </IconContext.Provider>
     </>
