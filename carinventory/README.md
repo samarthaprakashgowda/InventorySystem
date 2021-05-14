@@ -4,12 +4,8 @@ TO RUN THE APPLICATION
 2. npm start to start the application
 3. on another terminal run json-server --watch data/db.json --port 8000
 
-STILL TO DO
-Added session storage but still need to protect routes based on the token
-Same with Signout and Delete which only needs to be enabled with token
-
-CODE Defect
-On Login and On Add Car page clicking once doesn't take the value!
+Email: admin@email.com
+Password: 123abc
 
 # Getting Started with Create React App
 

@@ -32,16 +32,6 @@
     },
     {
       "type": "Car",
-      "make": "Ford",
-      "model": "Fusion",
-      "retailprice": "234",
-      "year": 2021,
-      "features": "2Door",
-      "qty": "213",
-      "id": 5
-    },
-    {
-      "type": "Car",
       "make": "Audi",
       "model": "A6",
       "retailprice": "11234",
