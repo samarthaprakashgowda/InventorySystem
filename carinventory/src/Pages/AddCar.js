@@ -1,4 +1,5 @@
 import {Box, CssBaseline, ButtonGroup,  FormLabel, RadioGroup, FormControlLabel, Radio, TextField, Button, Typography} from '@material-ui/core';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight';
 import RotateLeftIcon from '@material-ui/icons/RotateLeft';
 import {useState, useEffect} from 'react';
@@ -55,38 +56,6 @@ import Logout from './Logout';
         // }
     const  AddCar = () => {
 
-        const initialValues = {
-                making: '',
-                moding: '',
-                pricing: '',
-                qtying: ''
-            }
-        const onSubmit = (values) =>{
-                setMake(values.making);
-                setModel(values.moding);
-                setPrice(values.pricing);
-                setQty(values.qtying)
-                //console.log(type,make,model,time.getFullYear(),features,retailprice,qty);
-                const year = time.getFullYear();
-                fetch('http://localhost:8000/vehicleData',{
-                    method: 'POST',
-                    headers: {"Content-type": "application/json"},
-                    body: JSON.stringify({type, make, model, retailprice, year, features, qty})
-                })
-            }
-        
-       const validationSchema = Yup.object({
-           making: Yup.string().required("Please enter the required field").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed "),
-           moding: Yup.string().required("Please enter the required field").matches(/^[a-z0-9]+$/i, "Can use aplhanumeric"),
-           pricing: Yup.string().required("Please enter the required field").matches(/^[0-9]*$/, "Only numbers are allowed "),
-           qtying: Yup.string().required("Please enter the required field").matches(/^[0-9]*$/, "Only numbers are allowed ")
-       })
-            const formik = useFormik({
-                initialValues,
-                onSubmit,
-                validationSchema,
-                currState:"",
-            })
         const[data, setData] = useState([]);
         const [type, setType] = useState('');
         const [make, setMake] = useState('');
@@ -102,6 +71,40 @@ import Logout from './Logout';
             .then(data => setData(data))
         },[]))
 
+        
+         const initialValues = {
+                making: '',
+                moding: '',
+                pricing: '',
+                qtying: ''
+            }
+        const onSubmit = (values) =>{
+                setMake(values.making);
+                setModel(values.moding);
+                setPrice(values.pricing);
+                setQty(values.qtying)
+                console.log(type,make,model,time.getFullYear(),features,retailprice,qty);
+                const year = time.getFullYear();
+                fetch('http://localhost:8000/vehicleData',{
+                    method: 'POST',
+                    headers: {"Content-type": "application/json"},
+                    body: JSON.stringify({type, make, model, retailprice, year, features, qty})
+                })
+            }
+        
+       const validationSchema = Yup.object({
+           making: Yup.string().required("Please enter the required field"), //.matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed "),
+           moding: Yup.string().required("Please enter the required field").matches(/^[a-z0-9]+$/i, "Can use aplhanumeric"),
+           pricing: Yup.string().required("Please enter the required field").matches(/^[0-9]*$/, "Only numbers are allowed "),
+           qtying: Yup.string().required("Please enter the required field").matches(/^[0-9]*$/, "Only numbers are allowed ")
+       })
+       const formik = useFormik({
+                initialValues,
+                onSubmit,
+                validationSchema,
+                currState:"",
+            })
+            
 
     return ( 
         <>
@@ -121,9 +124,11 @@ import Logout from './Logout';
                             </RadioGroup>
                             <br/>
                             
-                            <TextField label="Make"  name = "making" variant="outlined"  value = {formik.values.making}
+
+                            <Autocomplete id="combo-box-demo" options={data}  onChange = {formik.handleChange} getOptionLabel={(data) => data.make} style={{ width: 300 }} 
+                            renderInput={(params)=><TextField {...params} label="Make"  name = "making" variant="outlined"  value = {formik.values.making}
                             required onChange = {formik.handleChange} style={{ width: 250 }} onBlur = {formik.handleBlur}
-                            />{formik.touched.making && formik.errors.making ? <div style={{color: "red"}}>{formik.errors.making}</div> : null}
+                            />}/>{formik.touched.making && formik.errors.making ? <div style={{color: "red"}}>{formik.errors.making}</div> : null}
                             
                             <br/><br/>    
                             <TextField label="Model"  name = "moding" variant="outlined"  value = {formik.values.moding}
@@ -132,7 +137,7 @@ import Logout from './Logout';
 
                             <br/><br/>
                             <MuiPickersUtilsProvider utils={DateFnsUtils}>
-                        <KeyboardDatePicker  views={['year']} label="Year" value={time} onChange={setTime}/>
+                            <KeyboardDatePicker  views={['year']} label="Year" value={time} onChange={setTime}/>
                             </MuiPickersUtilsProvider>
                             <br/><br/>
                             <FormLabel component="legend">Features</FormLabel>
@@ -144,11 +149,15 @@ import Logout from './Logout';
                             <TextField label="Retail Price"  name = "pricing" variant="outlined"  value = {formik.values.pricing}
                             required onChange = {formik.handleChange} style={{ width: 250 }} onBlur = {formik.handleBlur}
                             />{formik.touched.pricing && formik.errors.pricing ? <div style={{color: "red"}}>{formik.errors.pricing}</div> : null}
-                            <br/><br/>              
-                             <TextField label="Qty in Stock"  name = "qtying" variant="outlined"  value = {formik.values.qtying}
-                            required onChange = {formik.handleChange} style={{ width: 250 }} onBlur = {formik.handleBlur}
+                            <br/><br/>  
+
+
+
+                            <TextField label="Qty in Stock"  name = "qtying" variant="outlined" value = {formik.values.qtying}
+                            required onChange = {formik.handleChange} style={{ width: 250 }} //onBlur = {formik.handleBlur}
                             />{formik.touched.qtying && formik.errors.qtying ? <div style={{color: "red"}}>{formik.errors.qtying}</div> : null}
                             <br/><br/>
+
                             <ButtonGroup>
                                 <Button variant = "outlined"  style = {styles.button} onClick={formik.handleSubmit} endIcon= {<KeyboardArrowRightIcon/>}>Submit</Button>
                                 <Button variant = "outlined" style = {styles.button} endIcon = {<RotateLeftIcon/>} onClick={ e => formik.resetForm()}>Reset</Button>

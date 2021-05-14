@@ -3,6 +3,7 @@ import {DeleteRounded} from '@material-ui/icons';
 import {useHistory} from 'react-router-dom';
 import NumberFormat from 'react-number-format';
 
+
 const styles = {
     cardGrid:{
         padding: '20px 0',
@@ -28,9 +29,8 @@ const FilteredData = ({data}) => {
 
     //console.log(data)
     const history = useHistory();
-
+    
     const handleClick = (id)=>{
-            console.log(id)
             fetch('http://localhost:8000/vehicleData/' + id, {
             method: 'DELETE',
             headers: {
@@ -38,6 +38,7 @@ const FilteredData = ({data}) => {
             },
         })
         .then(()=>{history.push('/')})
+            
     }
     const handleView = (id)=>{
          history.push({
@@ -77,7 +78,7 @@ const FilteredData = ({data}) => {
                                 <CardActions>
                                     <Button size ="small" color = "primary" onClick = {()=>handleView(car.id)}>Click to view</Button>
                                     
-                                    <Button size ="small" color = "secondary" onClick={()=>handleClick(car.id)}>Delete<DeleteRounded/></Button>
+                                    {sessionStorage.getItem('token')!==null && <Button size ="small" color = "secondary" onClick={()=>handleClick(car.id)}>Delete<DeleteRounded/></Button>}
                                     
                                 </CardActions>
                             </Card>

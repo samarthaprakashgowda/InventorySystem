@@ -79,6 +79,46 @@
       "features": "4Door",
       "qty": "21",
       "id": 9
+    },
+    {
+      "type": "Car",
+      "make": "er",
+      "model": "wer",
+      "retailprice": "123",
+      "year": 2021,
+      "features": "4Door",
+      "qty": "213",
+      "id": 12
+    },
+    {
+      "type": "Truck",
+      "make": "",
+      "model": "",
+      "retailprice": "",
+      "year": 2021,
+      "features": "2Door",
+      "qty": "",
+      "id": 13
+    },
+    {
+      "type": "Car",
+      "make": "",
+      "model": "",
+      "retailprice": "",
+      "year": 2021,
+      "features": "2Door",
+      "qty": "",
+      "id": 14
+    },
+    {
+      "type": "Car",
+      "make": "bjb",
+      "model": "bhb",
+      "retailprice": "76",
+      "year": 2021,
+      "features": "2Door",
+      "qty": "4",
+      "id": 15
     }
   ]
 }

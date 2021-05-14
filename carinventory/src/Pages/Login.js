@@ -6,7 +6,7 @@ import {useFormik} from 'formik';
 import * as Yup from "yup";
 import {useHistory} from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
         const history = useHistory();
         const styles = {
             box:{
@@ -46,8 +46,7 @@ const Login = () => {
                 if (login === "admin@email.com" && password === "123abc") {
                         sessionStorage.setItem('token', JSON.stringify(login));
                         history.push('/addcar');
-
-                    }
+                }
                 else{
                     alert('Email & Password do not match Click again');
                 }
